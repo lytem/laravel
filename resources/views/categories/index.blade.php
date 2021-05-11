@@ -30,7 +30,7 @@
                 </tr>
                 @foreach ($items as $item)
                   <tr>
-                    <td><a href="categories/{{$item->id}}/edit">{{$item->nome}}</a></td>
+                    <td><a href="/categories/{{$item->id}}/edit">{{$item->nome}}</a></td>
                     <td>{{$item->descrizione}}</td>
                     <td>
                         <form action="/categories/{{$item->id}}" method="POST">

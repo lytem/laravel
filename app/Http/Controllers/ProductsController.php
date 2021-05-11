@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fornitore;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Http\Requests\FornitoreRequest;
 
-class FornitoriController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class FornitoriController extends Controller
      */
     public function index()
     {
-        $items=Fornitore::get();
-        return view('fornitore.index',compact('items'));
+        $items=Product::get();
+        return view('product.index',compact('items'));
     }
 
     /**
@@ -26,7 +25,7 @@ class FornitoriController extends Controller
      */
     public function create()
     {
-        return view('fornitore.create');
+        //
     }
 
     /**
@@ -35,11 +34,9 @@ class FornitoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FornitoreRequest $request)
+    public function store(Request $request)
     {
-        $fornitore=new Fornitore();
-        $fornitore->create($request->input('fornitore'));
-        return redirect('/fornitori');
+        //
     }
 
     /**
@@ -59,9 +56,9 @@ class FornitoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fornitore $fornitore)
+    public function edit($id)
     {
-        return view('fornitore.edit',compact('fornitore'));
+        //
     }
 
     /**
@@ -71,9 +68,9 @@ class FornitoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FornitoreRequest $request, Fornitore $fornitore)
+    public function update(Request $request, $id)
     {
-        $fornitore->update($request->input('fornitore'));
+        //
     }
 
     /**
@@ -84,9 +81,6 @@ class FornitoriController extends Controller
      */
     public function destroy($id)
     {
-        $fornitore=new Fornitore();
-        $items=$fornitore->find($id);
-        $items->delete();
-        return redirect('/fornitori');
+        //
     }
 }

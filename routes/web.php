@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\FornitoriController;
+
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,8 @@ use App\Http\Controllers\FornitoriController;
 Route::resource('categories', CategoriesController::class);
 
 Route::resource('fornitori', FornitoriController::class);
+
+Route::resource('product', ProductsController::class);
 
 Route::get('/', function () {
     return view('welcome');

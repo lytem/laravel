@@ -72,7 +72,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(CategorieRequest $request, Categorie $categorie)
     {
        $categorie->update($request->input('categorie'));
 
