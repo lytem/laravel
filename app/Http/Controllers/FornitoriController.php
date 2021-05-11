@@ -39,7 +39,7 @@ class FornitoriController extends Controller
     {
         $fornitore=new Fornitore();
         $fornitore->create($request->input('fornitore'));
-        return redirect('/fornitori');
+        return redirect('/fornitores');
     }
 
     /**
@@ -61,6 +61,7 @@ class FornitoriController extends Controller
      */
     public function edit(Fornitore $fornitore)
     {
+
         return view('fornitore.edit',compact('fornitore'));
     }
 
@@ -87,6 +88,6 @@ class FornitoriController extends Controller
         $fornitore=new Fornitore();
         $items=$fornitore->find($id);
         $items->delete();
-        return redirect('/fornitori');
+        return redirect('/fornitores');
     }
 }

@@ -8,9 +8,10 @@
         </style>
     </head>
     <body>
+        @include('common.menu')
         <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
 
-        <form action="{{route('fornitori.update' , $fornitore->id)}}" method="post">
+        <form action="{{route('fornitores.update',$fornitore->id)}}" method="post">
         @csrf
         @method('PUT')
             Nome Fornitore: <input type="text" name="fornitore[nome]" value="{{$fornitore->nome}}"><br><br>
@@ -24,6 +25,6 @@
             <input type="submit" value="salva modifiche">
         </form>
         <br><br><br>
-     <a href="/fornitori"> indietro</a>
+     <a href="/fornitores"> indietro</a>
     </body>
 </html>

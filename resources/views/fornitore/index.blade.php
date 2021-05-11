@@ -12,7 +12,7 @@
   </style>
 </head>
 <body>
-
+    @include('common.menu')
 <h2><em> Elenco Fornitori</em></h2>
 
 <table style="width:100%">
@@ -28,7 +28,7 @@
   </tr>
   @foreach ($items as $item)
   <tr>
-    <td><a href="/fornitori/{{$item->id}}/edit">{{$item->nome}}</a></td>
+    <td><a href="/fornitores/{{$item->id}}/edit">{{$item->nome}}</a></td>
     <td>{{$item->referente}}</td>
     <td>{{$item->indirizzo}}</td>
     <td>{{$item->cap}}</td>
@@ -37,7 +37,7 @@
     <td>{{$item->email}}</td>
     <td>{{$item->phone}}</td>
     <td>
-        <form action="/fornitori/{{$item->id}}" method="POST">
+        <form action="/fornitores/{{$item->id}}" method="POST">
         @csrf
         @method('DELETE')
         <input type="submit" value="DELETE">
@@ -49,7 +49,7 @@
 <br>
 <br>
 <br>
-<a href="{{route('fornitori.create')}}" style="color: rgb(15, 63, 117)"> Create New Fornitore</a>
+<a href="{{route('fornitores.create')}}" style="color: rgb(15, 63, 117)"> Create New Fornitore</a>
 
 </body>
 

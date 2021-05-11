@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Fornitore;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
+use App\Models\Categorie;
+use App\Models\Category;
+
 class ProductsController extends Controller
 {
     /**
@@ -12,6 +16,7 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $items=Product::get();
@@ -25,7 +30,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        $categories=Category::all();
+        $fornitori=Fornitore::all();
+        return view('product.create',compact('fornitori','categories'));
+
     }
 
     /**
@@ -58,9 +66,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('product.edit',compact('product'));
     }
 
     /**
@@ -70,9 +78,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+
+        $product->update($request->input('product'));
+        return redirect('/product');
     }
 
     /**
@@ -83,6 +93,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product=new Product();
+        $items=$product->find($id);
+        $items->delete();
+        return redirect('/products');
     }
 }

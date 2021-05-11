@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategorieRequest;
+use App\Models\Category;
 use Symfony\Component\Console\Input\Input;
 
 class CategoriesController extends Controller
@@ -16,8 +16,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $items=Categorie::get();
-        return view('categories.index',compact('items'));
+        $items=Category::get();
+        return view('categorie.index',compact('items'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('categorie.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class CategoriesController extends Controller
      */
     public function store(CategorieRequest $request)
     {
-       $categorie=new Categorie();
+       $categorie=new Category();
        $categorie->create($request->input('categorie'));
        return redirect('/categories');
     }
@@ -60,9 +60,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Category $categorie)
     {
-        return view('categories.edit',compact('categorie'));
+        return view('categorie.edit',compact('categorie'));
     }
 
     /**
@@ -72,7 +72,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategorieRequest $request, Categorie $categorie)
+    public function update(CategorieRequest $request, Category $categorie)
     {
        $categorie->update($request->input('categorie'));
 
@@ -87,7 +87,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $categorie=new Categorie();
+        $categorie=new Category();
         $items=$categorie->find($id);
         $items->delete();
         return redirect('/categories');

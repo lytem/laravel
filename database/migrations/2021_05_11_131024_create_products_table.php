@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
 
             $table->string('nome');
-            $table->integer('categorie_id');
-            $table->integer('fornitore_id');
+            $table->bigInteger('categorie_id');
+            $table->bigInteger('fornitore_id');
             $table->integer('prezzo_unitario');
             $table->integer('peso');
             $table->integer('volume');

@@ -16,14 +16,16 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-Route::resource('categories', CategoriesController::class);
+Route::resource('categories', CategoriesController::class)->parameters([
+    'categories'=>'categorie'
+]);
 
-Route::resource('fornitori', FornitoriController::class);
+Route::resource('fornitores', FornitoriController::class);
 
 Route::resource('products', ProductsController::class);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // ciao!

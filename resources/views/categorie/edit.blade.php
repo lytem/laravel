@@ -8,9 +8,10 @@
         </style>
     </head>
     <body>
+        @include('common.menu')
         <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
 
-        <form action="{{ route ('categories.update',$categorie->id)}}" method="POST">
+        <form action="{{route('categories.update',$categorie->id)}}" method="POST">
         @csrf
         @method('PUT')
             Nome Categoria: <input type="text" name="categorie[nome]" value="{{$categorie->nome}}">

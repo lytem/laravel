@@ -12,7 +12,7 @@
   </style>
 </head>
 <body>
-
+    @include('common.menu')
 <h2><em> Elenco Prodotti Deposito</em></h2>
 
 <table style="width:100%">
@@ -37,7 +37,7 @@
     <td>{{$item->reparto}}</td>
     <td>{{$item->giacenza}}</td>
     <td>
-        <form action="/fornitori/{{$item->id}}" method="POST">
+        <form action="/products/{{$item->id}}" method="POST">
         @csrf
         @method('DELETE')
         <input type="submit" value="DELETE">

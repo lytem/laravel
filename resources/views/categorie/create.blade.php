@@ -8,6 +8,7 @@
         </style>
     </head>
     <body>
+        @include('common.menu')
         <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
 
         <form action="{{route('categories.store')}}" method="post">

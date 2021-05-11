@@ -8,9 +8,10 @@
         </style>
     </head>
     <body>
+        @include('common.menu')
         <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
 
-        <form action="{{route('fornitori.store')}}" method="post">
+        <form action="{{route('fornitores.store')}}" method="post">
         @csrf
             Nome Fornitore: <input type="text" name="fornitore[nome]" value=""><br><br>
             Referente: <input type="text" name="fornitore[referente]" value=""><br><br>
@@ -23,6 +24,6 @@
             <input type="submit" value="create">
         </form>
         <br><br><br>
-     <a href="/fornitori"> indietro</a>
+     <a href="/fornitores"> indietro</a>
     </body>
 </html>
