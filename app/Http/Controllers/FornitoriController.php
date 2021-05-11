@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fornitore;
 use Illuminate\Http\Request;
 
-class ProvidersController extends Controller
+class FornitoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class ProvidersController extends Controller
      */
     public function index()
     {
-        //
+        $items=Fornitore::get();
+        return view('fornitore.index',compact('items'));
     }
 
     /**
