@@ -20,7 +20,7 @@ Route::resource('categories', CategoriesController::class);
 
 Route::resource('fornitori', FornitoriController::class);
 
-Route::resource('product', ProductsController::class);
+Route::resource('products', ProductsController::class);
 
 Route::get('/', function () {
     return view('welcome');
