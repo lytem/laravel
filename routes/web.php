@@ -17,6 +17,7 @@ use App\Http\Controllers\FornitoriController;
 Route::resource('categories', CategoriesController::class);
 
 Route::resource('fornitori', FornitoriController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });

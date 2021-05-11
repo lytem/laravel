@@ -87,8 +87,8 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $student=new Categorie();
-        $items=$student->find($id);
+        $categorie=new Categorie();
+        $items=$categorie->find($id);
         $items->delete();
         return redirect('/categories');
     }

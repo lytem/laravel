@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fornitore;
 use Illuminate\Http\Request;
+use App\Http\Requests\FornitoreRequest;
 
 class FornitoriController extends Controller
 {
@@ -25,7 +26,7 @@ class FornitoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('fornitore.create');
     }
 
     /**
@@ -34,9 +35,11 @@ class FornitoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FornitoreRequest $request)
     {
-        //
+        $fornitore=new Fornitore();
+        $fornitore->create($request->input('fornitore'));
+        return redirect('/fornitori');
     }
 
     /**
@@ -56,9 +59,9 @@ class FornitoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Fornitore $fornitore)
     {
-        //
+        return view('fornitore.edit',compact('fornitore'));
     }
 
     /**
@@ -68,9 +71,9 @@ class FornitoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, fornitore $fornitore)
     {
-        //
+        $fornitore->update($request->input('fornitore'));
     }
 
     /**
@@ -81,6 +84,9 @@ class FornitoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fornitore=new Fornitore();
+        $items=$fornitore->find($id);
+        $items->delete();
+        return redirect('/fornitori');
     }
 }
