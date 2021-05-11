@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProvidersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,8 @@ use App\Http\Controllers\CategoriesController;
 */
 
 Route::resource('categories', CategoriesController::class);
+
+Route::resource('providers', ProvidersController::class);
 Route::get('/', function () {
     return view('welcome');
 });
