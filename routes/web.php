@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\FornitoriController;
-
+use App\Http\Controllers\StocksController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\OrdersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,8 @@ use App\Http\Controllers\ProductsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('orders', OrdersController::class);
+Route::resource('stocks', StocksController::class);
 Route::resource('categories', CategoriesController::class)->parameters([
     'categories'=>'categorie'
 ]);

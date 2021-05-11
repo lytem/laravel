@@ -5,4 +5,5 @@
     <a href="/products">products</a>
     <a href="/categories">categories</a>
     <a href="/fornitores">fornitori</a>
+    <a href="/stocks">Stocks</a>
 </div>
