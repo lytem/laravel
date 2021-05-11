@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategorieRequest;
+use Symfony\Component\Console\Input\Input;
 
 class CategoriesController extends Controller
 {
@@ -13,7 +16,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $items=Categorie::get();
+        return view('categories.index',compact('items'));
     }
 
     /**
@@ -23,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -32,9 +36,11 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategorieRequest $request)
     {
-        //
+       $categorie=new Categorie();
+       $categorie->create($request->input('categorie'));
+       return redirect('/categories');
     }
 
     /**
@@ -45,7 +51,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -54,9 +60,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Categorie $categorie)
     {
-        //
+        return view('categories.edit',compact('categorie'));
     }
 
     /**
@@ -66,9 +72,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Categorie $categorie)
     {
-        //
+       $categorie->update($request->input('categorie'));
+
+        return redirect('/categories');
     }
 
     /**
@@ -79,6 +87,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student=new Categorie();
+        $items=$student->find($id);
+        $items->delete();
+        return redirect('/categories');
     }
 }
