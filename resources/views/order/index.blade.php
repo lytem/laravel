@@ -2,13 +2,12 @@
 <html>
 <head>
   <style>
-     h2,th{
-        text-align:left;
-        color: rgb(8, 82, 53)
-       }
-    body{
-        background-color: rgb(177, 194, 157)
-    }
+   body{
+            background-color: rgb(155, 142, 115);
+        }
+    h2,th,a{
+            color: rgb(54, 49, 39);
+        }
   </style>
 </head>
 <body>
@@ -43,7 +42,7 @@
 <br>
 <br>
 <br>
-<a href="{{route('orders.create')}}" style="color: rgb(15, 63, 117)"> Create New Prodotto</a>
+<a href="{{route('orders.create')}}"> Create New Prodotto</a>
 
 </body>
 

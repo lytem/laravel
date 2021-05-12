@@ -2,18 +2,23 @@
     <head>
         <style>
             body{
-                background-color: rgb(247, 218, 164)
+                background-color: rgb(148, 168, 111)
             }
 
         </style>
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
+        <h1 style="color: rgb(3, 78, 34)"><em><u>Nuovo Fornitore</u></em></h1><br><br>
 
         <form action="{{route('fornitores.store')}}" method="post">
         @csrf
             Nome Fornitore: <input type="text" name="fornitore[nome]" value=""><br><br>
+            ID Prodotto: <select name="fornitore[product_id]" >
+                @foreach ($product as $row)
+                  <option value="{{$row->id}}">{{$row->nome}}</option>
+                @endforeach
+            </select><br><br>
             Referente: <input type="text" name="fornitore[referente]" value=""><br><br>
             Indirizzo: <input type="text" name="fornitore[indirizzo]" value=""><br><br>
             Cap: <input type="text" name="fornitore[cap]" value=""><br><br>

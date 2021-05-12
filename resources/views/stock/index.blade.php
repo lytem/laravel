@@ -2,18 +2,25 @@
 <html>
 <head>
   <style>
-     h2,th{
+    th{
         text-align:left;
-        color: rgb(3, 44, 28)
+
        }
     body{
-        background-color: rgb(242, 245, 84)
+        background-color: rgb(121, 111, 148)
     }
+   h2,th,a{
+       color: rgb(43, 2, 51)
+   }
+   h2{
+       text-align: center;
+       font-size: 40px;
+   }
   </style>
 </head>
 <body>
     @include('common.menu')
-<h2><em> Stocks Magazzino</em></h2>
+<h2><em> Stocks Magazzino</em></h2><br><br>
 
 <table style="width:60%">
   <tr>
@@ -43,14 +50,15 @@
 <br>
 <br>
 <br>
-<a href="{{route('stocks.create')}}" style="color: rgb(15, 63, 117)">new Stocks</a>
+<a href="{{route('stocks.create')}}">new Stocks</a><br><br><br>
 
-<p>cerca Prodotto</p>
-<select name="stock[id_product]" >
+<div>cerca Prodotto
+<select name="stock[id_product]" style="width: 40%">
     @foreach ($product as $row)
         <option value="{{$row->id}}">{{$row->nome}}</option>
     @endforeach
      </select><br><br>
+</div>
 </body>
 
 

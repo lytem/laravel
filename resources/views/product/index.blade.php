@@ -2,18 +2,21 @@
 <html>
 <head>
   <style>
-     h2,th{
+    th{
         text-align:left;
-        color: rgb(8, 82, 53)
+
        }
     body{
-        background-color: rgb(177, 194, 157)
+        background-color: rgb(204, 164, 103);
     }
+    h1,a,th{
+                color: rgb(63, 40, 9)
+            }
   </style>
 </head>
 <body>
     @include('common.menu')
-<h2><em> Elenco Prodotti Deposito</em></h2>
+<h1><em> Elenco Prodotti Deposito</em></h1>
 
 <table style="width:100%">
   <tr>
@@ -49,7 +52,7 @@
 <br>
 <br>
 <br>
-<a href="{{route('products.create')}}" style="color: rgb(15, 63, 117)"> Create New Prodotto</a>
+<a href="{{route('products.create')}}"> Create New Prodotto</a>
 
 </body>
 

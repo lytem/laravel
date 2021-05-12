@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fornitore;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\FornitoreRequest;
 
@@ -26,7 +27,9 @@ class FornitoriController extends Controller
      */
     public function create()
     {
-        return view('fornitore.create');
+        $product=Product::all();
+
+        return view('fornitore.create',compact('product'));
     }
 
     /**
@@ -75,6 +78,7 @@ class FornitoriController extends Controller
     public function update(FornitoreRequest $request, Fornitore $fornitore)
     {
         $fornitore->update($request->input('fornitore'));
+        return redirect('/fornitores');
     }
 
     /**

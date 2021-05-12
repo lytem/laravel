@@ -1,15 +1,17 @@
 <html>
     <head>
         <style>
-            body{
-                background-color: rgb(247, 218, 164)
+           body{
+                background-color:rgb(102, 123, 155)
             }
-
+            a,h1{
+                color: rgb(7, 36, 80);
+            }
         </style>
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
+        <h1><em><u>Nuova Categoria</u></em></h1><br><br>
 
         <form action="{{route('categories.update',$categorie->id)}}" method="POST">
         @csrf

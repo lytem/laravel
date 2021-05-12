@@ -4,10 +4,13 @@
   <style>
      h2,th{
         text-align:left;
-        color: rgb(3, 3, 73)
+        color: rgb(3, 44, 28)
        }
     body{
-        background-color: rgb(174, 226, 228)
+        background-color: rgb(148, 168, 111);
+    }
+    a{
+        color: rgb(3, 44, 28);
     }
   </style>
 </head>
@@ -49,7 +52,7 @@
 <br>
 <br>
 <br>
-<a href="{{route('fornitores.create')}}" style="color: rgb(15, 63, 117)"> Create New Fornitore</a>
+<a href="{{route('fornitores.create')}}"> Create New Fornitore</a>
 
 </body>
 

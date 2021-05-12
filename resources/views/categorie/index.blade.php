@@ -3,14 +3,12 @@
         <style>
             th{
                 text-align: left;
-                color: rgb(67, 46, 87)
             }
             body{
-                background-color: rgb(247, 218, 164)
+                background-color:rgb(102, 123, 155)
             }
-            h1{
-
-                text-align: center
+            a,h1,th{
+                color: rgb(7, 36, 80);
             }
             table,td,th{
                 border: 2px solid black;
@@ -21,7 +19,7 @@
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: sienna"><em><u>Categorie Prodotti </u></em></h1><br><br>
+        <h1><em><u>Categorie Prodotti </u></em></h1><br><br>
 
             <table align="center" style="width: 70%">
                 <tr>

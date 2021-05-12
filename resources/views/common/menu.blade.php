@@ -1,6 +1,6 @@
 
 
-<div>
+<div style="background-color: rgb(209, 207, 207)">
     <a href="/" style="color: rgb(39, 8, 68)">home</a>
     <a href="/products">products</a>
     <a href="/categories">categories</a>

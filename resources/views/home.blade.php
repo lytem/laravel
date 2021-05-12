@@ -3,7 +3,7 @@
 
         <style>
             body{
-                background-color: rgb(153, 147, 147);
+                background-color: rgb(112, 109, 109);
             }
             h1{
                 color: blue;

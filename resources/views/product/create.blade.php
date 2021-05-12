@@ -2,14 +2,17 @@
     <head>
         <style>
             body{
-                background-color: rgb(240, 214, 161)
+                background-color: rgb(204, 164, 103);
+            }
+            h1,a{
+                color: rgb(63, 40, 9)
             }
 
         </style>
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: rgb(76, 21, 104)"><em><u>Nuovo Prodotto</u></em></h1><br><br>
+        <h1><em><u>Nuovo Prodotto</u></em></h1><br><br>
 
     <form action="{{route('products.store')}}" method="POST">
         @csrf

@@ -2,14 +2,16 @@
     <head>
         <style>
             body{
-                background-color: rgb(240, 214, 161)
+                background-color: rgb(155, 142, 115);
             }
-
+            h1,a{
+                color: rgb(54, 49, 39);
+            }
         </style>
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: rgb(76, 21, 104)"><em><u>Nuovo Ordine</u></em></h1><br><br>
+        <h1><em><u>Nuovo Ordine</u></em></h1><br><br>
 
     <form action="/orders" method="POST">
         @csrf

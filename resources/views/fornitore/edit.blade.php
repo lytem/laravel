@@ -2,14 +2,14 @@
     <head>
         <style>
             body{
-                background-color: rgb(247, 218, 164)
+                background-color: rgb(148, 168, 111)
             }
 
         </style>
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: sienna"><em><u>Nuova Categoria</u></em></h1><br><br>
+        <h1 style="color: rgb(4, 66, 17)"><em><u>Nuova Categoria</u></em></h1><br><br>
 
         <form action="{{route('fornitores.update',$fornitore->id)}}" method="post">
         @csrf
