@@ -36,10 +36,16 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OrdersRequest $request)
+    public function store(Request $request)
     {
-        $orders=new Order();
-        $orders->create($request->input('orders'));
+        $qrcode=$request->input('qr_code');
+
+        $order=new Order();
+        $order->create([
+            "qr_code" =>$order,
+        ]);
+
+        return redirect('/orders');
     }
 
     /**

@@ -11,9 +11,9 @@
         @include('common.menu')
         <h1 style="color: rgb(76, 21, 104)"><em><u>Nuovo Ordine</u></em></h1><br><br>
 
-    <form action="{{route('products.store')}}" method="POST">
+    <form action="/orders" method="POST">
         @csrf
-        QR Code: <input type="text" name="order[qr_code]" value=""><br><br>
+        QR Code: <input type="text" name="qr_code" value=""><br><br>
 
         <input type="submit" value="Show">
     </form>

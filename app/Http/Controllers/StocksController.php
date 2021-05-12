@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 use App\Http\Requests\StocksRequest;
+use App\Models\Product;
 class StocksController extends Controller
 {
     /**
@@ -15,7 +16,8 @@ class StocksController extends Controller
     public function index()
     {
         $items=Stock::get();
-        return view('stock.index',compact('items'));
+        $product=Product::all();
+        return view('stock.index',compact('items','product'));
     }
 
     /**

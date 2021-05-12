@@ -7,7 +7,7 @@
         color: rgb(3, 44, 28)
        }
     body{
-        background-color: rgb(239, 243, 22)
+        background-color: rgb(242, 245, 84)
     }
   </style>
 </head>
@@ -45,6 +45,12 @@
 <br>
 <a href="{{route('stocks.create')}}" style="color: rgb(15, 63, 117)">new Stocks</a>
 
+<p>cerca Prodotto</p>
+<select name="stock[id_product]" >
+    @foreach ($product as $row)
+        <option value="{{$row->id}}">{{$row->nome}}</option>
+    @endforeach
+     </select><br><br>
 </body>
 
 
