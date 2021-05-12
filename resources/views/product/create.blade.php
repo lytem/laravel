@@ -13,6 +13,11 @@
 
     <form action="{{route('products.store')}}" method="POST">
         @csrf
+        ID Fornitore:  <select name="product[fornitore_id]" >
+            @foreach ($fornitori as $row)
+                <option value="{{$row->id}}">{{$row->nome}}</option>
+            @endforeach
+        </select><br><br>
         Nome Prodotto: <input type="text" name="product[nome]" value=""><br><br>
         ID Categoria: <select name="product[categorie_id]" >
             @foreach ($categories as $row)
@@ -20,11 +25,7 @@
             @endforeach
              </select><br><br>
 
-        ID Fornitore:  <select name="product[fornitore_id]" >
-            @foreach ($fornitori as $row)
-                <option value="{{$row->id}}">{{$row->nome}}</option>
-            @endforeach
-        </select><br><br>
+
         Prezzo Unitario: <input type="text" name="product[prezzo_unitario]" value=""><br><br>
         Peso: <input type="text" name="product[peso]" value=""><br><br>
         Volume: <input type="text" name="product[volume]" value=""><br><br>

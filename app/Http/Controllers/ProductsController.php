@@ -30,6 +30,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
+
         $categories=Category::all();
         $fornitori=Fornitore::all();
         return view('product.create',compact('fornitori','categories'));

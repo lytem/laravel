@@ -19,7 +19,7 @@
 </head>
 <body>
     @include('common.menu')
-    <h1><u> MAGAZZINO BRANDAZZA</u></h1>
+    <h1><u><em>MAGAZZINO BRANDAZZA</em></u></h1>
 
 </body>
 </html>

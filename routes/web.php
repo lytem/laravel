@@ -36,3 +36,7 @@ Route::get('/', function () {
 //hot
 //notte
 // commento
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

@@ -21,7 +21,7 @@
     </head>
     <body>
         @include('common.menu')
-        <h1 style="color: sienna"><em><u>Descrizione prodotti </u></em></h1><br><br>
+        <h1 style="color: sienna"><em><u>Categorie Prodotti </u></em></h1><br><br>
 
             <table align="center" style="width: 70%">
                 <tr>
