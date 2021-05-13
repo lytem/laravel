@@ -24,7 +24,7 @@
   </tr>
   @foreach ($items as $item)
   <tr>
-    <td>{{$item->product_id}}</td>
+    <td><a href="/orders/{{$item->id}}/edit">{{$item->product_id}}</td></a>
     <td>{{$item->fornitore_id}}</td>
     <td>{{$item->nome_magazzino}}</td>
     <td>{{$item->utente_id}}</td>
