@@ -13,12 +13,31 @@
         @include('common.menu')
         <h1><em><u>Nuovo Ordine</u></em></h1><br><br>
 
-    <form action="/orders" method="POST">
-        @csrf
-        QR Code: <input type="text" name="qr_code" value=""><br><br>
+        <form action="{{route('orders.store')}}" method="post">
+            @csrf
 
-        <input type="submit" value="Show">
-    </form>
+            ID Prodotto: <select name="product[product_id]">
+                @foreach ($product as $prod)
+                <option value="{{$prod->nome}}">{{$prod->nome}}</option>
+                @endforeach
+
+            </select><br><br>
+            ID fornitore: <select name="fornitore[fornitore_id]">
+
+                @foreach ($fornitore as $fornit)
+                <option value="{{$fornit->nome}}">
+                    {{$fornit->nome}}
+                 </option>
+                @endforeach
+
+            </select><br><br>
+            Nome Magazzino: <input type="text" name="order[nome_magazzino]" value=""><br><br>
+            ID utente: <input type="text" name="order[utente_id]" value=""><br><br>
+            Date creazione: <input type="date" name="order[create_at]" value=""><br><br>
+            <input type="submit" value="create">
+
+        </form>
+
         <br><br><br>
      <a href="/products"> indietro</a>
     </body>

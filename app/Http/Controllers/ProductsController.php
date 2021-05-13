@@ -34,6 +34,7 @@ class ProductsController extends Controller
 
         $categories=Category::all();
         $fornitori=Fornitore::all();
+
         return view('product.create',compact('fornitori','categories'));
 
     }
@@ -101,11 +102,8 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product=new Product();
-        $items=$product->find($id);
-        $items->delete();
-        $stocks=new Stock();
-        $stocks->product()->associate($items);
-        $stocks->delete();
+        $product=Product::find($id);
+        $product->delete();
         return redirect('/products');
 
     }

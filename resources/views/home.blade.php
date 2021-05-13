@@ -3,10 +3,10 @@
 
         <style>
             body{
-                background-color: rgb(112, 109, 109);
+                background-color: rgb(238, 195, 195);
             }
             h1{
-                color: blue;
+                color: rgb(73, 4, 47);
                 padding: 20%;
                 text-align: center;
                 font-size: 50px;
@@ -19,7 +19,7 @@
 </head>
 <body>
     @include('common.menu')
-    <h1><u><em>MAGAZZINO BRANDAZZA</em></u></h1>
+    <h1><u><em>Eliane Boutique</em></u></h1>
 
 </body>
 </html>

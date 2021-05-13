@@ -16,7 +16,7 @@
         <form action="{{route('stocks.store')}}" method="POST">
         @csrf
             ID Prodotto: <input type="text" name="stock[product_id]" value="">
-            Quantita entrata: <input type="text" name="stock[quantita_entrata]" value="0">
+            Quantita entrata: <input type="text" name="stock[quantita_entrata]" value="">
             Note: <input type="text" name="stock[note]" value="note">
             <input type="submit" value="create">
         </form>

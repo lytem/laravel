@@ -21,4 +21,8 @@ class Product extends Model
     public function stock(){
         return $this->hasOne(stock::class);
     }
+    public function order(){
+        return $this->belongsTo(Order::class);
+    }
+
 }

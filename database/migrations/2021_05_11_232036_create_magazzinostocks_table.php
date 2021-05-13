@@ -16,7 +16,7 @@ class CreateMagazzinostocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('product_id');
+            $table->integer('product_id')->unique();
             $table->integer('quantita_entrata')->default(0);
             $table->string('note')->default('note');
 

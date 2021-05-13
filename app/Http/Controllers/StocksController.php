@@ -27,8 +27,9 @@ class StocksController extends Controller
      */
     public function create()
     {
+        $product=Product::get()->last()->id_product;
 
-        return view('stock.create');
+        return view('stock.create',compact('product'));
     }
 
     /**

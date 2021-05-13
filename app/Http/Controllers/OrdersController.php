@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrdersRequest;
+use App\Models\Fornitore;
 use App\Models\Stock;
 
 class OrdersController extends Controller
@@ -27,7 +28,11 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('order.create');
+
+        $product=Product::all();
+        $fornitore=Fornitore::all();
+
+        return view('order.create',compact('product','fornitore'));
     }
 
     /**
@@ -36,16 +41,11 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrdersRequest $request)
     {
-        $qrcode=$request->input('qr_code');
-
-        $order=new Order();
-        $order->create([
-            "qr_code" =>$order,
-        ]);
-
-        return redirect('/orders');
+         $order =new Order();
+         $order->create($request->input('order'));
+         return redirect('/orders');
     }
 
     /**
@@ -57,8 +57,7 @@ class OrdersController extends Controller
     public function show(Order $order)
     {
 
-        $items=$order->find($order);
-        return view('show',compact('items'));
+
     }
 
     /**
@@ -67,9 +66,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stock $stock)
+    public function edit(Order $order)
     {
-      //
+      return view('orders.edit',compact('order'));
     }
 
     /**
@@ -79,9 +78,10 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Order $order)
     {
-        //
+        $order->update($request->input('order'));
+        return redirect('orders');
     }
 
     /**
@@ -92,6 +92,8 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order=new Order();
+        $order->find($id)->delete();
+        return redirect('/orders');
     }
 }

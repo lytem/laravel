@@ -16,19 +16,19 @@
 
 <table style="width:60%">
   <tr>
-    <th>QR Code</th>
-    <th>ID Fornitore</th>
-    <th>Nome Magazzino</th>
-    <th>ID Utente</th>
-    <th>Data</th>
+<th>ID Prodotto</th>
+<th>ID Fornitore</th>
+<th>Nome Magazzino</th>
+ <th>ID Utente</th>
+ <th>Data Creazione</th>
   </tr>
   @foreach ($items as $item)
   <tr>
-    <td>{{$item->qr_code}}</td>
+    <td>{{$item->product_id}}</td>
     <td>{{$item->fornitore_id}}</td>
     <td>{{$item->nome_magazzino}}</td>
     <td>{{$item->utente_id}}</td>
-    <td>{{$item->data}}</td>
+    <td>{{$item->create_at}}</td>
     <td>
         <form action="/orders/{{$item->id}}" method="POST">
         @csrf
