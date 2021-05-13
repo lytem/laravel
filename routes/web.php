@@ -6,6 +6,7 @@ use App\Http\Controllers\FornitoriController;
 use App\Http\Controllers\StocksController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\RecordsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::resource('categories', CategoriesController::class)->parameters([
 Route::resource('fornitores', FornitoriController::class);
 
 Route::resource('products', ProductsController::class);
+Route::resource('Records', RecordsController::class);
 
 Route::get('/', function () {
     return view('home');

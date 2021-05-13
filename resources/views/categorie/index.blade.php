@@ -43,7 +43,7 @@
 
             </table>
         <br><br><br>
-        <a href="{{route('categories.create')}}" style="color: rgb(46, 45, 45)"> Create New categorie</a>
+        <a href="{{route('categories.create')}}"> Create New categorie</a>
 
     </body>
 </html>

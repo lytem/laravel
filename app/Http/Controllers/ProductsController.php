@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Categorie;
 use App\Models\Category;
+use App\Models\Stock;
 
 class ProductsController extends Controller
 {
@@ -46,7 +47,12 @@ class ProductsController extends Controller
     public function store(ProductRequest $request)
     {
         $product=new Product();
-        $product->create($request->input('product'));
+        $product=Product::create($request->input('product'));//pour recuperer l'objet avec son id
+        $stocks=new Stock();
+        $stocks->quantita_entrata=0;
+        $stocks->note='note';
+        $stocks ->product()->associate($product);
+        $stocks->save();
         return redirect('/products');
     }
 
@@ -97,6 +103,10 @@ class ProductsController extends Controller
         $product=new Product();
         $items=$product->find($id);
         $items->delete();
+        $stocks=new Stock();
+        $stocks->product()->associate($items);
+        $stocks->delete();
         return redirect('/products');
+
     }
 }

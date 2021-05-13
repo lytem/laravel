@@ -24,7 +24,6 @@
 
 <table style="width:60%">
   <tr>
-    <th>ID ordine</th>
     <th>ID Prodotto</th>
     <th>Quantita in ingresso</th>
     <th>Note</th>
@@ -32,8 +31,7 @@
   </tr>
   @foreach ($items as $item)
   <tr>
-    <td><a href="/stocks/{{$item->id}}/edit">{{$item->ordini_id}}</a></td>
-    <td>{{$item->product_id}}</td>
+    <td><a href="/stocks/{{$item->id}}/edit">{{$item->product_id}}</a></td>
     <td>{{$item->quantita_entrata}}</td>
     <td>{{$item->note}}</td>
 
