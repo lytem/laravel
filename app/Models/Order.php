@@ -16,5 +16,7 @@ class Order extends Model
     public function fornitore(){
         return $this->hasMany(Fornitore::class);
     }
-
+    public function record(){
+        return $this->hasMany(Record::class);
+    }
 }

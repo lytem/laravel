@@ -33,7 +33,7 @@
             </select><br><br>
             Nome Magazzino: <input type="text" name="order[nome_magazzino]" value=""><br><br>
             ID utente: <input type="text" name="order[utente]" value=""><br><br>
-            Date creazione: <input type="date" name="order[create_at]" value=""><br><br>
+            Date creazione: <input type="date" name="order[created_at]" value=""><br><br>
             <input type="submit" value="create">
 
         </form>

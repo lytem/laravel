@@ -7,10 +7,11 @@
             background-color: rgb(155, 142, 115);
         }
 
-        h2,
-        th,
-        a {
+        h2,th,a{
             color: rgb(54, 49, 39);
+        }
+        th{
+            text-align: left;
         }
 
     </style>
@@ -34,7 +35,7 @@
                 <td>{{ $item->fornitore_id }}</td>
                 <td>{{ $item->nome_magazzino }}</td>
                 <td>{{ $item->utente }}</td>
-                <td>{{ $item->create_at }}</td>
+                <td>{{ $item->created_at }}</td>
                 <td>
                     <form action="/orders/{{ $item->id }}" method="POST">
                         @csrf

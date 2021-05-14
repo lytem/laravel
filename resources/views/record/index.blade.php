@@ -19,18 +19,22 @@
     </head>
     <body>
         @include('common.menu')
-        <h1><em><u>Categorie Prodotti </u></em></h1><br><br>
+        <h1><em><u>Elenco Records</u></em></h1><br><br>
 
             <table align="center" style="width: 70%">
                 <tr>
-                  <th>Nome</th>
-                  <th>Descrizione</th>
+                  <th>ID Ordini</th>
+                  <th>ID Stock</th>
+                  <th>Quantità</th>
+                  <th>note</th>
                   <th></th>
                 </tr>
                 @foreach ($items as $item)
                   <tr>
-                    <td><a href="/records/{{$item->id}}/edit">{{$item->nome}}</a></td>
-                    <td>{{$item->descrizione}}</td>
+                    <td><a href="/records/{{$item->id}}/edit">{{$item->ordini_id}}</a></td>
+                    <td>{{$item->stock_id}}</td>
+                    <td>{{$item->quantite}}</td>
+                    <td>{{$item->note}}</td>
                     <td>
                         <form action="/records/{{$item->id}}" method="POST">
                         @csrf

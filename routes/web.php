@@ -26,7 +26,7 @@ Route::resource('categories', CategoriesController::class)->parameters([
 Route::resource('fornitores', FornitoriController::class);
 
 Route::resource('products', ProductsController::class);
-Route::resource('Records', RecordsController::class);
+Route::resource('records', RecordsController::class);
 
 Route::get('/', function () {
     return view('home');

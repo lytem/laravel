@@ -15,7 +15,7 @@
         ID fornitore: <input type="text" name="order[fornitore_id" ] value="{{ $order->fornitore_id }}">
         Nome Magazzino: <input type="text" name="order[nome_magazzino]" value="{{ $order->nome_magazzino }}">
         ID utente: <input type="text" name="order[utente]" value="{{ $order->utente }}">
-        data creazione: <input type="date" name="order[create_at]" value=" {{ $order->create_at }}">
+        data creazione: <input type="date" name="order[created_at]" value=" {{ $order->created_at }}">
         <input type="submit" value="salva modifiche">
 
     </form>
