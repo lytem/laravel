@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('product_id');
             $table->integer('fornitore_id');
             $table->string('nome_magazzino');
-            $table->integer('utente_id');
+            $table->integer('utente');
             $table->string('data');
 
 

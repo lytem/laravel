@@ -8,11 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Fornitore extends Model
 {
     use HasFactory;
-    protected $fillable=['nome','referente','indirizzo','cap','city','country','email','phone','product_id'];
+    protected $fillable=['nome','referente','indirizzo','cap','city','country','email','phone'];
 
-    public function product(){
-        return $this->hasMany(Product::class);
-    }
     public function order(){
         return $this->belongsTo(Product::class);
     }

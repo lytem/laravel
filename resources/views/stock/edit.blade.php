@@ -16,7 +16,7 @@
         <form action="{{route('stocks.update',$stock->id)}}" method="POST">
         @csrf
         @method('PUT')
-            ID Prodotto: <input type="text" name="stock[product_id]" value="{{$stock->product_id}}">
+            ID Prodotto: <input type="text" name="stock[product_id]" value="{{$stock->product_id}}" readonly>
             Quantita entrata: <input type="text" name="stock[quantita_entrata]" value="{{$stock->quantita_entrata}}">
             Note: <input type="text" name="stock[note]" value="{{$stock->note}}">
             <input type="submit" value="Salva Modifiche">

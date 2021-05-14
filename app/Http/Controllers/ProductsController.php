@@ -34,7 +34,6 @@ class ProductsController extends Controller
 
         $categories=Category::all();
         $fornitori=Fornitore::all();
-
         return view('product.create',compact('fornitori','categories'));
 
     }
@@ -76,7 +75,9 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('product.edit',compact('product'));
+        $categories=Category::all();
+        $fornitori=Fornitore::all();
+        return view('product.edit',compact('product','categories','fornitori'));
     }
 
     /**
@@ -86,7 +87,7 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
 
         $product->update($request->input('product'));

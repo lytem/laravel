@@ -9,4 +9,6 @@ class Record extends Model
 {
     use HasFactory;
     protected $fillable=['stocks_id','ordini_id','quantita','note'];
+
+
 }

@@ -16,23 +16,23 @@
         <form action="{{route('orders.store')}}" method="post">
             @csrf
 
-            ID Prodotto: <select name="product[product_id]">
+            ID Prodotto: <select name="order[product_id]">
                 @foreach ($product as $prod)
-                <option value="{{$prod->nome}}">{{$prod->nome}}</option>
+                <option value="{{$prod->id}}">{{$prod->id}}</option>
                 @endforeach
 
             </select><br><br>
-            ID fornitore: <select name="fornitore[fornitore_id]">
+            ID fornitore: <select name="order[fornitore_id]">
 
                 @foreach ($fornitore as $fornit)
-                <option value="{{$fornit->nome}}">
-                    {{$fornit->nome}}
+                <option value="{{$fornit->id}}">
+                    {{$fornit->id}}
                  </option>
                 @endforeach
 
             </select><br><br>
             Nome Magazzino: <input type="text" name="order[nome_magazzino]" value=""><br><br>
-            ID utente: <input type="text" name="order[utente_id]" value=""><br><br>
+            ID utente: <input type="text" name="order[utente]" value=""><br><br>
             Date creazione: <input type="date" name="order[create_at]" value=""><br><br>
             <input type="submit" value="create">
 

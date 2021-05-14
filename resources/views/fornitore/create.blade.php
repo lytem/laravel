@@ -14,11 +14,6 @@
         <form action="{{route('fornitores.store')}}" method="post">
         @csrf
             Nome Fornitore: <input type="text" name="fornitore[nome]" value=""><br><br>
-            ID Prodotto: <select name="fornitore[product_id]" >
-                @foreach ($product as $row)
-                  <option value="{{$row->id}}">{{$row->nome}}</option>
-                @endforeach
-            </select><br><br>
             Referente: <input type="text" name="fornitore[referente]" value=""><br><br>
             Indirizzo: <input type="text" name="fornitore[indirizzo]" value=""><br><br>
             Cap: <input type="text" name="fornitore[cap]" value=""><br><br>

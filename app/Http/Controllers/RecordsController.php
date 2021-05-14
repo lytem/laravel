@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\RecordsRequest;
+use App\Models\Record;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
@@ -13,6 +14,8 @@ class RecordsController extends Controller
      */
     public function index()
     {
+        $items=Record::get();
+        return view('record.index',compact('items'));
 
     }
 
@@ -23,7 +26,7 @@ class RecordsController extends Controller
      */
     public function create()
     {
-        //
+        return view('record.create');
     }
 
     /**
@@ -32,9 +35,12 @@ class RecordsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecordsRequest $request)
     {
-        //
+        $record=new Record();
+        $record->create($request->input('record'));
+        return redirect('/records');
+
     }
 
     /**
@@ -54,9 +60,9 @@ class RecordsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Record $record)
     {
-        //
+        return view('record.edit',compact('record'));
     }
 
     /**
@@ -66,9 +72,10 @@ class RecordsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Record $record)
     {
-        //
+        $record->update($request->input('record'));
+        return redirect('/records');
     }
 
     /**
@@ -79,6 +86,8 @@ class RecordsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $record=new Record();
+        $record->find($id)->delete();
+        return redirect('/records');
     }
 }

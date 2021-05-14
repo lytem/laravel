@@ -17,7 +17,7 @@ class CreateRecordsTable extends Migration
             $table->id();
 
             $table->integer('stock_id');
-            $table->integer('orini_id');
+            $table->integer('ordini_id');
             $table->integer('quantità');
             $table->string('note');
 
