@@ -12,29 +12,27 @@
     </head>
     <body>
         @include('common.menu')
-        <h1><em><u>Nuovo Prodotto</u></em></h1><br><br>
+        <h1><em><u>Nuovo records</u></em></h1><br><br>
 
-    <form action="{{route('products.store')}}" method="POST">
+    <form action="{{route('records.store')}}" method="POST">
         @csrf
-        Nome Prodotto: <input type="text" name="product[nome]" value=""><br><br>
-
         ID Ordini:  <select name="record[ordini_id]" >
-            @foreach ($fornitori as $row)
-                <option value="{{$row->id}}">{{$row->nome}}</option>
+            @foreach ($order as $row)
+                <option value="{{$row->id}}">{{$row->id}}</option>
             @endforeach
         </select><br><br>
 
         ID Stock: <select name="record[stock_id]" >
-            @foreach ($categories as $row)
-                <option value="{{$row->id}}">{{$row->nome}}</option>
+            @foreach ($stock as $row)
+                <option value="{{$row->id}}">{{$row->id}}</option>
             @endforeach
              </select><br><br>
-        Quantità: <input type="text" name="record[reparto]" value=""><br><br>
-        Note: <input type="text" name="record[giacenza]" value=""><br><br>
+        Quantità: <input type="text" name="record[quantita]" value=""><br><br>
+        Note: <input type="text" name="record[note]" value=""><br><br>
 
         <input type="submit" value="create">
     </form>
         <br><br><br>
-     <a href="/products"> indietro</a>
+     <a href="/records"> indietro</a>
     </body>
 </html>

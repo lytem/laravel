@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\RecordsRequest;
 use App\Models\Record;
+use App\Models\Stock;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
@@ -26,7 +28,9 @@ class RecordsController extends Controller
      */
     public function create()
     {
-        return view('record.create');
+        $stock=Stock::all();
+        $order=Order::all();
+        return view('record.create',compact('stock','order'));
     }
 
     /**
@@ -62,7 +66,9 @@ class RecordsController extends Controller
      */
     public function edit(Record $record)
     {
-        return view('record.edit',compact('record'));
+        $stock=Stock::all();
+        $order=Order::all();
+        return view('record.edit',compact('record','stock','order'));
     }
 
     /**

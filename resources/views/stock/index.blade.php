@@ -39,7 +39,7 @@
         </tr>
         @foreach ($items as $item)
             <tr>
-                <td><a href="/stocks/{{ $item->id }}/edit">{{ $item->product_id }}</a></td>
+                <td><a href="/stocks/{{ $item->id }}/edit">{{ $item->product_id}}</a></td>
                 <td>{{ $item->quantita_entrata }}</td>
                 <td>{{ $item->note }}</td>
 

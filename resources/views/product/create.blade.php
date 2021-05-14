@@ -18,7 +18,7 @@
         @csrf
         Nome Prodotto: <input type="text" name="product[nome]" value=""><br><br>
 
-        ID Fornitore:  <select name="product[fornitore_id]" >
+        ID Fornitore: <select name="product[fornitore_id]" >
             @foreach ($fornitori as $row)
                 <option value="{{$row->id}}">{{$row->nome}}</option>
             @endforeach

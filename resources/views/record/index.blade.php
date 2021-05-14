@@ -47,7 +47,7 @@
 
             </table>
         <br><br><br>
-        <a href="{{route('records.create')}}"> Create New categorie</a>
+        <a href="{{route('records.create')}}"> Create New record</a>
 
     </body>
 </html>
