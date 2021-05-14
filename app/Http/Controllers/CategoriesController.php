@@ -39,6 +39,7 @@ class CategoriesController extends Controller
     public function store(CategorieRequest $request)
     {
        $categorie=new Category();
+
        $categorie->create($request->input('categorie'));
        return redirect('/categories');
     }

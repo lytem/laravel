@@ -2,7 +2,7 @@
     <head>
         <style>
             body{
-                background-color: rgb(204, 164, 103);
+                background-color: rgb(243, 213, 168);
             }
             h1,a{
                 color: rgb(63, 40, 9)
